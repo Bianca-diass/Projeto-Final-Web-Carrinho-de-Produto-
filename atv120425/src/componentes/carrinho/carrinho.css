@@ -1,0 +1,131 @@
+:root{
+    background-color: black;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    padding: 10px;
+
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.titulo {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ffffff;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.blocoFinal {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.preco {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #fcfffd;
+}
+
+.botaoMais {
+    background: #000000;
+    color: rgb(146, 3, 189);
+    border: 2px solid #4e0bad;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.botaoMenos {
+    background: #000000;
+    color: rgb(146, 3, 189);
+    border: 2px solid #565656;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.botaoMenos:hover {
+    background: #35054f77;
+    border: 2px solid #4e0bad;
+}
+
+.botaoMais:hover {
+    background: #35054f77;
+    border: 2px solid #4e0bad;
+}
+
+.botaoFinalizar {
+    background: #4e0bad;
+    margin-left: 25%;
+    color: white;
+    border: none;
+    width: 300px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 25px;
+    border: 2px solid #4e0bad;
+    margin-top: 20px;
+}
+
+.finalizar {
+    color: white;
+    border-top: 2px solid black;
+
+    width: 100%;
+}
+
+
+#valorTotal{
+    float: left;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+#precoFinal{
+    float: left;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    margin-left: 20px;
+    float: right;
+}
+
+.botaoFinalizar:hover {
+    background: #a600ff77;
+    border: 2px solid #4e0bad;
+}
+
+.finalizar {
+    width: 100%;
+
+}
+
+.carrinho {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    float: right;
+    gap: 20px;
+    padding: 10px;
+    background-color: #252222;
+    border-radius: 8px;
+    border: 3px solid #615f5f;
+}
+
+.quantidadeItens{
+    color: white;
+}
