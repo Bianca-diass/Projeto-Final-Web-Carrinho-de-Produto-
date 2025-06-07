@@ -88,42 +88,42 @@ export default function DashboardProdutos() {
             </button>
           </div>
         ) : (
-          produtos.map((produto) => (
-            <div className="produto-card" key={produto.id}>
-              <div className="produto-imagem-container">
-                <img
-                  src={produto.imagem || "/placeholder-produto.png"}
-                  alt={produto.nome}
-                  className="produto-imagem"
-                  onError={(e) => {
-                    e.target.src = "/placeholder-produto.png";
-                  }}
-                />
-              </div>
-              <div className="produto-info">
-                <h3>{produto.nome}</h3>
-                <p className="produto-preco">
-                  R$ {produto.valor?.toFixed(2).replace(".", ",")}
-                </p>
-                <div className="produto-acoes">
-                  <button
-                    onClick={() => abrirModalEditar(produto)}
-                    className="btn-editar"
-                  >
-                    Editar
-                  </button>
-                  <button
-                    onClick={() => removerProduto(produto.id)}
-                    className="btn-remover"
-                  >
-                    Remover
-                  </button>
+            produtos.map((produto) => (
+              <div className="produto-card" key={produto.id}>
+                <div className="produto-imagem-container">
+                  <img
+                    src={produto.imagem || "/placeholder-produto.png"}
+                    alt={produto.nome}
+                    className="produto-imagem"
+                    onError={(e) => {
+                      e.target.src = "/placeholder-produto.png";
+                    }}
+                  />
+                </div>
+                <div className="produto-info">
+                  <h3>{produto.nome}</h3>
+                  <p className="produto-preco">
+                    R$ {produto.valor?.toFixed(2).replace(".", ",")}
+                  </p>
+                  <div className="produto-acoes">
+                    <button
+                      onClick={() => abrirModalEditar(produto)}
+                      className="btn-editar"
+                    >
+                      Editar
+                    </button>
+                    <button
+                      onClick={() => removerProduto(produto.id)}
+                      className="btn-remover"
+                    >
+                      Remover
+                    </button>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))
-        )}
-      </div>
+            ))
+          )}
+        </div>
 
       <ModalProduto
         aberto={modalAberto}

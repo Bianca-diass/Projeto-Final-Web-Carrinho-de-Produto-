@@ -1,18 +1,17 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-<<<<<<< HEAD
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
-import App from "./App";
-import "./index.css";
+import App from './App';
+import './index.css';
 
-import TelaLogin from "./TelaLogin";
-import Produtos from "./components/Produtos/Produtos";
-import PrivateRoute from "./PrivateRoute";
-import DashboardProdutos from "./pages/DashboardProdutos";
-import CriarProduto from "./pages/CriarProduto";
+import TelaLogin from './TelaLogin';
+import Produtos from './components/Produtos/Produtos';
+import PrivateRoute from './PrivateRoute';
+import DashboardProdutos from './pages/DashboardProdutos';
+import CriarProduto from './pages/CriarProduto';
 
-ReactDOM.createRoot(document.getElementById("root")).render(
+ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
@@ -22,11 +21,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
             index
             element={
               <Navigate
-                to={
-                  localStorage.getItem("isLoggedIn") === "true"
-                    ? "/produtos"
-                    : "/login"
-                }
+                to={localStorage.getItem('isLoggedIn') === 'true' ? '/produtos' : '/login'}
                 replace
               />
             }
@@ -53,12 +48,5 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         </Route>
       </Routes>
     </BrowserRouter>
-=======
-import App from "./App.jsx";
-
-ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <App />
->>>>>>> 477aebd7f1a136be270118f36fd7caa396abad16
   </React.StrictMode>
 );

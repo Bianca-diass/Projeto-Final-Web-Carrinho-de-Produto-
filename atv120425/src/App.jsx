@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import { Outlet, Link, useLocation, useNavigate } from "react-router-dom";
 import "./App.css";
 
@@ -16,7 +15,8 @@ export default function App() {
     <div className="app-layout">
       {isLoggedIn && (
         <div className="sidebar">
-          <h2>Peças</h2>
+          <img src="public/images/logo_ecomerce.jpeg" alt="Usuário" />
+          <h2>E-Commerce</h2>
           <nav>
             <ul>
               <li>
@@ -67,23 +67,3 @@ export default function App() {
     </div>
   );
 }
-=======
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Routers from "./componentes/routers/routers";
-import { StrictMode } from 'react';
-import { BrowserRouter } from "react-router-dom";
-
-function App() {
-
-  
-  return (
-    <StrictMode>
-    <BrowserRouter>
-      <Routers />
-    </BrowserRouter>
-  </StrictMode>
-  );
-}
-
-export default App;
->>>>>>> 477aebd7f1a136be270118f36fd7caa396abad16
