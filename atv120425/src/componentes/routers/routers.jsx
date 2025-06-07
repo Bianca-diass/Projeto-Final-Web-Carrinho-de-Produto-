@@ -1,26 +1,29 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 
-import LoginPage from "../../pages/login";
-import CadastroPage from "../../pages/signUp/index";
-import PaginaInicial from "../../pages/home/index";
-import PainelAdmin from "../../pages/admin/dashboard";
-import NovoProduto from "../../pages/criarProdutos/criarProd";
-import ProdutosCadastrados from "../../pages/lerProdutos/lerProd";
-import AtualizaProduto from "../../pages/atualizaProdutos/atualizar";
-import ExcluiProduto from "../../pages/removeProdutos/removeProd";
+import Login from "../../pages/login";
+import SignUp from "../../pages/signUp/index";
+import Home from "../../pages/home/index";
+import Dashboard from "../../pages/admin/dashboard";
+import CriaProduto from "../../pages/criarProdutos/criarProd";
+import ListaProdutos from "../../pages/lerProdutos/lerProd";
+import EditaProduto from "../../pages/atualizaProdutos/atualizar";
+import RemoveProduto from "../../pages/removeProdutos/removeProd";
 
-export default function AppRoutes() {
+export default function Routers() {
   return (
     <Routes>
-      <Route path="/" element={<LoginPage />} />
-      <Route path="/signUp" element={<CadastroPage />} />
-      <Route path="/home" element={<PaginaInicial />} />
-      <Route path="/dashboard" element={<PainelAdmin />} />
-      <Route path="/adicionaProduto" element={<NovoProduto />} />
-      <Route path="/listagemProdutos" element={<ProdutosCadastrados />} />
-      <Route path="/editaProduto" element={<AtualizaProduto />} />
-      <Route path="/removeProduto" element={<ExcluiProduto />} />
+      
+      <Route path="/" element={<Login />} />  
+      <Route path="/signUp" element={<SignUp />} />
+      <Route path="/home" element={<Home />} />
+      <Route path="/dashboard" element={<Dashboard />} />
+      <Route path="/adicionaProduto" element={<CriaProduto />} />
+      <Route path="/listagemProdutos" element={<ListaProdutos />} />
+      <Route path="/editaProduto" element={<EditaProduto />} />
+      <Route path="/removeProduto" element={<RemoveProduto />} />
+      
+
     </Routes>
   );
 }

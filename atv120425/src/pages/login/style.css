@@ -46,11 +46,11 @@
 
 #tituloLogin {
   font-size: x-large;
-  background: linear-gradient(to right, #4b6cb7, #182848);
-  color: black;
+  background-color: black;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   margin-bottom: 10px;
 }
-
 
 .cadastro p {
   display: inline;
@@ -64,6 +64,8 @@
   text-decoration: underline;
   cursor: pointer;
 }
+
+/* oiiii teste*/
 
 .confirmaLogin {
   display: flex;
