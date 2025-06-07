@@ -1,81 +1,87 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
+import "./style.css";
 
 export default function SignUp() {
   const navigate = useNavigate();
 
   const [form, setForm] = useState({
-    nome: "",
-    email: "",
-    telefone: "",
-    senha: "",
+    nome: '',
+    email: '',
+    telefone: '',
+    senha: ''
   });
 
-  const handleChange = (e) => {
+  const userDados = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const realizaCadastro = (e) => {
     e.preventDefault();
-    console.log("Dados enviados:", form);
     alert("Cadastro realizado com sucesso!");
-    navigate("/login");
+    navigate("/");
   };
 
   return (
-    <div className="signup-container">
-      <h1>Cadastro</h1>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>Nome completo:</label>
-          <br />
-          <input
-            type="text"
-            name="nome"
-            value={form.nome}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div>
-          <label>Email:</label>
-          <br />
-          <input
-            type="email"
-            name="email"
-            value={form.email}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div>
-          <label>Telefone:</label>
-          <br />
-          <input
-            type="tel"
-            name="telefone"
-            value={form.telefone}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div>
-          <label>Senha:</label>
-          <br />
-          <input
-            type="password"
-            name="senha"
-            value={form.senha}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <br />
-        <button type="submit">Cadastrar</button>
-        <button type="button" onClick={() => navigate("/")}>
-          Cancelar
-        </button>
-      </form>
+    
+    <div className='signUpTela'>
+      <div className='signUpContainer'>
+        
+        
+        <h1 className='signUpTitulo'>Crie sua conta</h1>
+        <form onSubmit={realizaCadastro} className='signUpForm'>
+          <div className='signUpGroup'>
+            <label>Nome completo:</label>
+            <input
+              type="text"
+              name="nome"
+              value={form.nome}
+              onChange={userDados}
+              required
+            />
+          </div>
+
+          <div className='signUpGroup'>
+            <label>Email:</label>
+            <input
+              type="email"
+              name="email"
+              value={form.email}
+              onChange={userDados}
+              required
+            />
+          </div>
+
+          <div className='signUpGroup'>
+            <label>Telefone:</label>
+            <input
+              type="tel"
+              name="telefone"
+              pattern="[0-9]{11}"
+              value={form.telefone}
+              onChange={userDados}
+              required
+            />
+          </div>
+
+          <div className='signUpGroup'>
+            <label>Senha:</label>
+            <input
+              type="password"
+              name="senha"
+              value={form.senha}
+              onChange={userDados}
+              required
+            />
+          </div>
+
+          <div className='signUpButtons'>
+            <button id='signUpCadastrar' type="submit">Cadastrar</button>
+            <button id='signUpCancelar' type="button" onClick={() => navigate("/")}>Cancelar</button>
+          </div>
+        </form>
+      </div>
     </div>
+    
   );
 }

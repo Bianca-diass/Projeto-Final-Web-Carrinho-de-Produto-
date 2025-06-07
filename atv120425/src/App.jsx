@@ -1,16 +1,17 @@
-import { BrowserRouter } from 'react-router';
-import React, { useState } from 'react';
-import Routers from './componentes/routers';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Routers from "./componentes/routers/routers";
+import { StrictMode } from 'react';
+import { BrowserRouter } from "react-router-dom";
 
 function App() {
-  const [count, setCount] = useState(0);
 
+  
   return (
-    <>
+    <StrictMode>
     <BrowserRouter>
       <Routers />
-     </BrowserRouter>
-    </>
+    </BrowserRouter>
+  </StrictMode>
   );
 }
 

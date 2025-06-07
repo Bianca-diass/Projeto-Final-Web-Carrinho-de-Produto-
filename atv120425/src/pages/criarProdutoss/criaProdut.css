@@ -1,0 +1,87 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.cadastroProduto {
+  height: 100vh;
+  background: linear-gradient(to right, #4b6cb7 25%, #182848); /* Azul escuro gradiente */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.formContainer {
+  background-color: #f9f9f9;
+  padding: 2rem 3rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 400px;
+}
+
+.tituloCadastro {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.formGroup label {
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+.formGroup input {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.botoesCadastro {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+}
+
+#cadastro {
+  background-color: #28a745; /* Verde mais suave */
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+#cadastro:hover {
+  background-color: #218838;
+}
+
+#cancela {
+  background-color: #dc3545; /* Vermelho mais limpo */
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+#cancela:hover {
+  background-color: #c82333;
+}

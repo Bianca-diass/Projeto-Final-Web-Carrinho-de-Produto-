@@ -1,60 +1,58 @@
 import "./produtos.css";
 import { FaBeer, FaShoppingCart } from "react-icons/fa";
-import React from "react";
-import { produtos } from "./produtos.js";
-import Carrinho from "../carrinho";
-import { FaX } from "react-icons/fa6";
+import React, { useState } from "react";
+import { produtos } from "./produtos";
+import MenuLateral from "../menuLateral/menuLateral";
+import Carrinho from "./Carrinho"; // Certifique-se de que o componente Carrinho está importado corretamente
 
 export default function Produtos() {
-  const [cartItems, setCartItems] = React.useState([]);
+  const [itensCarrinho, definirItensCarrinho] = useState([]);
+  const [carrinhoVisivel, setCarrinhoVisivel] = useState(false);
 
-  const [showCart, setShowCart] = React.useState(false);
-
-  function addItem(item) {
-    setCartItems((prev) => [...prev, item]);
-  }
+  const adicionarAoCarrinho = (produto) => {
+    definirItensCarrinho((anteriores) => [...anteriores, produto]);
+  };
 
   return (
     <div className="containerProdutos">
-      <div className="cartButton">
-        <button onClick={() => setShowCart(true)}>
-          <FaShoppingCart size={25} />
-        </button>
-        <span className="cartCount">
-          {cartItems.length > 0 && cartItems.length}
-        </span>
-      </div>
-      {showCart && (
-        <div className="carrinhoContainer show">
-          <button
-            className="closeCarrinho"
-            onClick={() => setShowCart(false)}
-          >
-            <FaBeer />
+      <MenuLateral />
+      <div className="conteudoProdutos">
+        <div className="cartButton">
+          <button onClick={() => setCarrinhoVisivel(true)}>
+            <FaShoppingCart size={25} />
           </button>
-          <Carrinho
-            cartItems={cartItems}
-            setCartItems={setCartItems}
-          />
+          {itensCarrinho.length > 0 && (
+            <span className="cartCount">{itensCarrinho.length}</span>
+          )}
         </div>
-      )}
-      <div className="produtos">
-        {produtos.map((item) => {
-          return (
-            <div
-              key={item.nome}
-              className="produto"
+
+        {carrinhoVisivel && (
+          <div className="carrinhoContainer show">
+            <button
+              className="closeCarrinho"
+              onClick={() => setCarrinhoVisivel(false)}
             >
-              <img
-                src={item.imagem}
-                alt={item.nome}
-              />
-              <h4>{item.nome}</h4>
-              <p>R$ {item.valor.toFixed(2)}</p>
-              <button onClick={() => addItem(item)}>Comprar</button>
+              <FaBeer />
+            </button>
+            <Carrinho
+              cartItems={itensCarrinho}
+              setCartItems={definirItensCarrinho}
+            />
+          </div>
+        )}
+
+        <div className="produtos">
+          {produtos.map((produto) => (
+            <div key={produto.nome} className="produto">
+              <img src={produto.imagem} alt={produto.nome} />
+              <h4>{produto.nome}</h4>
+              <p>R$ {produto.valor.toFixed(2)}</p>
+              <button onClick={() => adicionarAoCarrinho(produto)}>
+                Comprar
+              </button>
             </div>
-          );
-        })}
+          ))}
+        </div>
       </div>
     </div>
   );
