@@ -1,0 +1,76 @@
+.produtos-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+.titulo {
+  color: #333;
+  margin-bottom: 30px;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.search-container {
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px 15px;
+  border: 2px solid #ddd;
+  border-radius: 25px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.search-input:focus {
+  border-color: #ff6b81;
+}
+
+.produtos-table {
+  width: 80%;
+  max-width: 800px;
+  border-collapse: collapse;
+  background: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.produtos-table th, .produtos-table td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.produtos-table th {
+  background-color: #ff6b81;
+  color: white;
+  font-weight: 500;
+}
+
+.produtos-table tr:hover {
+  background-color: #f5f5f5;
+}
+
+.action-button {
+  padding: 8px 16px;
+  background-color: #ff6b81;
+  color: white;
+  border: none;
+  border-radius: 20px; /* Botão arredondado */
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.action-button:hover {
+  background-color: #ff4757;
+}

@@ -1,0 +1,33 @@
+.pagina-produto { padding: 20px; background: #000; min-height: 100vh; }
+.cabeçalho {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 20px; color: #ff69b4;
+}
+.logout-btn {
+  background: transparent; border: 2px solid #ff1493;
+  color: #ff1493; padding: 6px 12px; border-radius: 4px;
+  cursor: pointer;
+}
+.btn-create {
+  background: #ff1493; color: #000; border: none;
+  padding: 8px 16px; border-radius: 4px; margin-bottom: 20px;
+  cursor: pointer;
+}
+.gradeProdutos {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(180px,1fr));
+  gap: 20px;
+}
+.cardProduto {
+  background: #1a1a1a; color: #eee;
+  border-radius: 8px; padding: 12px; text-align: center;
+}
+.cardProduto img {
+  width: 100%; height: 120px; object-fit: contain; margin-bottom: 8px;
+}
+.card-actions { display: flex; justify-content: space-around; margin-top: 8px; }
+.botaoCompra {
+  background: #ff69b4; color: #000; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer;
+}
+.edit-btn, .del-btn {
+  background: transparent; border: none; color: #ff69b4; font-size: 1.2rem; cursor: pointer;
+}
